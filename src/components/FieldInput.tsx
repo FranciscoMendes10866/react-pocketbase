@@ -24,7 +24,9 @@ export const FieldInput: FC<Props> = ({ label, formik, ...props }) => {
         {...rest}
         {...props}
       />
-      {rest.touched && rest.error ? <div>{rest.error}</div> : null}
+      {rest.touched && rest.error ? (
+        <small className="text-red-500">{rest.error}</small>
+      ) : null}
     </div>
   );
 };
