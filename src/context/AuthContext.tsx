@@ -48,8 +48,10 @@ const fiveMinutesInMs = ms("5 minutes");
 const twoMinutesInMs = ms("2 minutes");
 
 export const AuthProvider: FC<Props> = ({ children }) => {
-  const [token, setToken] = useState<string>();
-  const [user, setUser] = useState<User>();
+  const [token, setToken] = useState<string>(pocketbase.authStore.token ?? "");
+  const [user, setUser] = useState<User | undefined>(
+    (pocketbase.authStore.model as any) ?? undefined
+  );
 
   useEffect(() => {
     // @ts-ignore
