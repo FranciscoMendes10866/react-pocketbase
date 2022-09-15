@@ -49,7 +49,6 @@ export const Dashboard = () => {
     async (id: string) => {
       await pocketbase.records.delete("expenses", id);
       mutate();
-      formik.resetForm();
     },
     [mutate]
   );
