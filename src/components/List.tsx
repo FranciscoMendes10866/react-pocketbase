@@ -18,7 +18,7 @@ export const List: FC<Props> = ({ data, deleteFn }) => {
   );
 
   return (
-    <div className="w-full max-w-lg sm:p-8">
+    <div className="w-full max-w-lg mt-6">
       <div className="flex justify-between items-center mb-4">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           Latest Expenses
