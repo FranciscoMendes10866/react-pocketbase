@@ -6,6 +6,7 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@vitejs/plugin-react': ^2.1.0
   autoprefixer: ^10.4.10
+  classnames: ^2.3.2
   dayjs: ^1.11.5
   flowbite: ^1.5.3
   flowbite-react: ^0.1.11
@@ -26,6 +27,7 @@ specifiers:
 
 dependencies:
   '@types/ms': 0.7.31
+  classnames: 2.3.2
   dayjs: 1.11.5
   flowbite: 1.5.3
   flowbite-react: 0.1.11_uavxuq6ihy3y4s6l4higxx7hai

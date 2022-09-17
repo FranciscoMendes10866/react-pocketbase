@@ -30,7 +30,11 @@ export const List: FC<Props> = ({ data, deleteFn }) => {
       <div className="h-96 w-full max-w-lg overflow-y-auto">
         <ul className="mx-4 mb-6">
           {data?.items.map((item: any) => (
-            <ListItem key={item.id} item={item} deleteFn={deleteFn} />
+            <ListItem
+              key={`list-item-${item.id}`}
+              item={item}
+              deleteFn={deleteFn}
+            />
           ))}
         </ul>
       </div>

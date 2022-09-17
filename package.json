@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/ms": "^0.7.31",
+    "classnames": "^2.3.2",
     "dayjs": "^1.11.5",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.1.11",
