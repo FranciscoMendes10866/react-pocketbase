@@ -24,7 +24,7 @@ export const List: FC<Props> = ({ data, deleteFn }) => {
           Latest Expenses
         </h5>
         <p className="text-2xl text-gray-500 truncate dark:text-gray-400">
-          -${totalAmount}
+          {totalAmount > 0 ? `-$${totalAmount}` : `$0`}
         </p>
       </div>
       <div className="h-96 w-full max-w-lg overflow-y-auto">
