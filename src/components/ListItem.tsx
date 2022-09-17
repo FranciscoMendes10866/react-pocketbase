@@ -18,7 +18,7 @@ export const ListItem: FC<Props> = ({ item, deleteFn }) => {
       <div className="flex items-center space-x-4">
         <div className="flex-1 min-w-0">
           <p className="text-base font-medium text-gray-900 truncate dark:text-white">
-            {item?.text}
+            {item?.expenseName}
           </p>
           <p className="text-sm text-gray-500 truncate dark:text-gray-400">
             {dayjs(item.created).calendar()}

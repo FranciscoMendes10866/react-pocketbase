@@ -12,12 +12,12 @@ import { pocketbase } from "../utils/pocketbase";
 
 interface FormValues {
   amount: number;
-  text: string;
+  expenseName: string;
 }
 
 const validationSchema = yup.object().shape({
   amount: yup.number().min(0, "Min Value is 0").required("Required"),
-  text: yup.string().required("Required"),
+  expenseName: yup.string().required("Required"),
 });
 
 export const Dashboard = () => {
@@ -46,7 +46,7 @@ export const Dashboard = () => {
   const formik = useFormik<FormValues>({
     initialValues: {
       amount: 0,
-      text: "",
+      expenseName: "",
     },
     validationSchema,
     onSubmit,
@@ -76,12 +76,12 @@ export const Dashboard = () => {
           formik={formik}
         />
         <FieldInput
-          id="text"
+          id="expenseName"
           type="text"
           label="On what?"
           placeholder="Value..."
-          name="text"
-          value={formik.values.text}
+          name="expenseName"
+          value={formik.values.expenseName}
           onChange={formik.handleChange}
           formik={formik}
         />
