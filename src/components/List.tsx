@@ -24,14 +24,11 @@ export const List: FC<Props> = ({ data, deleteFn }) => {
           Latest Expenses
         </h5>
         <p className="text-2xl text-gray-500 truncate dark:text-gray-400">
-          -${totalAmount}.00
+          -${totalAmount}
         </p>
       </div>
-      <div className="flow-root">
-        <ul
-          role="list"
-          className="divide-y divide-gray-200 dark:divide-gray-700"
-        >
+      <div className="h-96 w-full max-w-lg overflow-y-auto">
+        <ul className="mx-4 mb-6">
           {data?.items.map((item: any) => (
             <ListItem item={item} deleteFn={deleteFn} />
           ))}

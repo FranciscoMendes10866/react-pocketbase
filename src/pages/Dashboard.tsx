@@ -52,38 +52,36 @@ export const Dashboard = () => {
   );
 
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center">
-        <form
-          className="flex flex-row justify-center items-end space-x-3"
-          onSubmit={formik.handleSubmit}
-        >
-          <FieldInput
-            id="amount"
-            type="number"
-            label="Amount"
-            name="amount"
-            value={formik.values.amount}
-            onChange={formik.handleChange}
-            formik={formik}
-          />
-          <FieldInput
-            id="text"
-            type="text"
-            label="On what?"
-            placeholder="Value..."
-            name="text"
-            value={formik.values.text}
-            onChange={formik.handleChange}
-            formik={formik}
-          />
-          <div className="mb-4">
-            <Button type="submit" label="Submit" />
-          </div>
-        </form>
+    <div className="w-full h-screen flex flex-col items-center justify-center">
+      <form
+        className="flex flex-row justify-center items-end space-x-3 px-4"
+        onSubmit={formik.handleSubmit}
+      >
+        <FieldInput
+          id="amount"
+          type="number"
+          label="Amount"
+          name="amount"
+          value={formik.values.amount}
+          onChange={formik.handleChange}
+          formik={formik}
+        />
+        <FieldInput
+          id="text"
+          type="text"
+          label="On what?"
+          placeholder="Value..."
+          name="text"
+          value={formik.values.text}
+          onChange={formik.handleChange}
+          formik={formik}
+        />
+        <div className="mb-4">
+          <Button type="submit" label="Submit" />
+        </div>
+      </form>
 
-        <List data={data} deleteFn={deleteFn} />
-      </div>
+      <List data={data} deleteFn={deleteFn} />
     </div>
   );
 };
