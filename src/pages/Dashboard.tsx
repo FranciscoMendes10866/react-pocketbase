@@ -7,6 +7,7 @@ import { FieldInput } from "../components/FieldInput";
 import { Button } from "../components/Button";
 import { List } from "../components/List";
 
+import { useAuth } from "../context/AuthContext";
 import { pocketbase } from "../utils/pocketbase";
 
 interface FormValues {
@@ -20,14 +21,22 @@ const validationSchema = yup.object().shape({
 });
 
 export const Dashboard = () => {
+  const authStore = useAuth();
+
   const { data, mutate } = useSWR(
     "getExpenses/",
-    async () => await pocketbase.records.getList("expenses")
+    async () =>
+      await pocketbase.records.getList("expenses", 1, 200, {
+        filter: `user = "${authStore?.user?.id}"`,
+      })
   );
 
   const onSubmit = useCallback(
     async (values: FormValues) => {
-      await pocketbase.records.create("expenses", values);
+      await pocketbase.records.create("expenses", {
+        ...values,
+        user: authStore?.user?.id,
+      });
       mutate();
       formik.resetForm();
     },
